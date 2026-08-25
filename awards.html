@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>पुरस्कार व सन्मान | साहित्य सेवा संस्था</title>
+
+    <meta name="description"
+          content="साहित्य सेवा संस्थेतर्फे देण्यात येणारे पुरस्कार, सन्मान आणि गौरव सोहळे.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==============================
+           AWARDS PAGE
+           ============================== */
+
+        .awards-section {
+            background: var(--cream);
+        }
+
+        .awards-intro {
+            max-width: 820px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .award-card {
+            background: var(--white);
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 10px;
+            border-top: 5px solid var(--gold);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .award-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .award-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--cream-dark);
+            display: grid;
+            place-items: center;
+            font-size: 43px;
+        }
+
+        .award-card h3 {
+            color: var(--green);
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .award-card p {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .award-year {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: var(--gold);
+            color: var(--dark-green);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* Honoured people */
+
+        .honour-section {
+            background: var(--white);
+        }
+
+        .honour-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .honour-card {
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            border-left: 4px solid var(--maroon);
+        }
+
+        .honour-photo {
+            width: 80px;
+            height: 80px;
+            min-width: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--cream-dark);
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+        }
+
+        .honour-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .honour-info h3 {
+            color: var(--green);
+            font-size: 19px;
+            margin-bottom: 4px;
+        }
+
+        .honour-info span {
+            color: var(--maroon);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .honour-info p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-top: 7px;
+            line-height: 1.5;
+        }
+
+        /* Award philosophy */
+
+        .award-message {
+            background: var(--green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .award-message-inner {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .award-message .quote {
+            color: var(--gold);
+            font-size: 65px;
+            line-height: 0.8;
+            margin-bottom: 20px;
+        }
+
+        .award-message h2 {
+            color: var(--white);
+            font-size: clamp(30px, 4vw, 45px);
+            margin-bottom: 18px;
+        }
+
+        .award-message p {
+            color: #e7dfd2;
+            line-height: 1.8;
+        }
+
+        /* CTA */
+
+        .award-cta {
+            background: var(--maroon);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .award-cta h2 {
+            color: var(--white);
+            font-size: clamp(28px, 4vw, 42px);
+            margin-bottom: 15px;
+        }
+
+        .award-cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #eadfd6;
+        }
+
+        @media (max-width: 900px) {
+
+            .awards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .honour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .awards-grid,
+            .honour-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .honour-card {
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+         ============================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो">
+
+                <div class="logo-text">
+
+                    <h1>साहित्य सेवा संस्था</h1>
+
+                    <span>
+                        साहित्याची सेवा • संस्कृतीची जपणूक
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Menu">
+
+                ☰
+
+            </button>
+
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="poets.html">
+                    कवी / साहित्यिक
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+                <a href="awards.html" class="active">
+                    पुरस्कार व सन्मान
+                </a>
+
+                <a href="contact.html">
+                    संपर्क
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         PAGE HERO
+         ============================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span>
+                गौरव • सन्मान • प्रेरणा
+            </span>
+
+            <h2>
+                पुरस्कार व सन्मान
+            </h2>
+
+            <p>
+                साहित्य आणि संस्कृतीच्या क्षेत्रात उल्लेखनीय
+                कार्य करणाऱ्या व्यक्तींचा गौरव.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         AWARDS
+         ============================== -->
+
+    <section class="section awards-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    आमचे पुरस्कार
+                </span>
+
+                <h2>
+                    साहित्यिक गौरव आणि सन्मान
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <p class="awards-intro">
+
+                साहित्य, काव्य, भाषा आणि संस्कृतीच्या क्षेत्रात
+                उल्लेखनीय योगदान देणाऱ्या कवी, लेखक आणि
+                साहित्यिकांच्या कार्याची दखल घेऊन त्यांचा
+                सन्मान करणे हा साहित्य सेवा संस्थेच्या
+                कार्याचा महत्त्वाचा भाग आहे.
+
+            </p>
+
+
+            <div class="awards-grid">
+
+
+                <!-- AWARD 1 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        साहित्य सेवा गौरव पुरस्कार
+                    </h3>
+
+                    <p>
+                        साहित्य क्षेत्रात सातत्यपूर्ण आणि
+                        उल्लेखनीय योगदान देणाऱ्या साहित्यिकांचा
+                        गौरव करण्यासाठी दिला जाणारा सन्मान.
+                    </p>
+
+                    <span class="award-year">
+                        साहित्य सेवा संस्था
+                    </span>
+
+                </article>
+
+
+                <!-- AWARD 2 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        🥇
+                    </div>
+
+                    <h3>
+                        काव्य गौरव पुरस्कार
+                    </h3>
+
+                    <p>
+                        काव्यलेखन आणि काव्यवाचन क्षेत्रात
+                        उल्लेखनीय कार्य करणाऱ्या कवींचा
+                        सन्मान.
+                    </p>
+
+                    <span class="award-year">
+                        विशेष सन्मान
+                    </span>
+
+                </article>
+
+
+                <!-- AWARD 3 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        🌟
+                    </div>
+
+                    <h3>
+                        नवोदित साहित्यिक सन्मान
+                    </h3>
+
+                    <p>
+                        नव्या पिढीतील कवी आणि साहित्यिकांच्या
+                        प्रतिभेला प्रोत्साहन देण्यासाठी
+                        विशेष सन्मान.
+                    </p>
+
+                    <span class="award-year">
+                        नवोदित प्रतिभा
+                    </span>
+
+                </article>
+
+
+                <!-- AWARD 4 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        📚
+                    </div>
+
+                    <h3>
+                        साहित्य योगदान सन्मान
+                    </h3>
+
+                    <p>
+                        मराठी भाषा आणि साहित्याच्या
+                        संवर्धनासाठी योगदान देणाऱ्या
+                        व्यक्तींचा गौरव.
+                    </p>
+
+                    <span class="award-year">
+                        साहित्य योगदान
+                    </span>
+
+                </article>
+
+
+                <!-- AWARD 5 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        🎖️
+                    </div>
+
+                    <h3>
+                        संस्कृती सेवा सन्मान
+                    </h3>
+
+                    <p>
+                        मराठी संस्कृती, परंपरा आणि
+                        सांस्कृतिक उपक्रमांसाठी कार्य करणाऱ्या
+                        व्यक्तींचा सन्मान.
+                    </p>
+
+                    <span class="award-year">
+                        संस्कृती सेवा
+                    </span>
+
+                </article>
+
+
+                <!-- AWARD 6 -->
+
+                <article class="award-card">
+
+                    <div class="award-icon">
+                        💐
+                    </div>
+
+                    <h3>
+                        विशेष साहित्यिक गौरव
+                    </h3>
+
+                    <p>
+                        साहित्य आणि सामाजिक क्षेत्रात
+                        उल्लेखनीय कार्य करणाऱ्या मान्यवरांचा
+                        विशेष गौरव.
+                    </p>
+
+                    <span class="award-year">
+                        विशेष गौरव
+                    </span>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         HONOURED LITERATI
+         ============================== -->
+
+    <section class="section honour-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    गौरवलेले साहित्यिक
+                </span>
+
+                <h2>
+                    सन्मानित साहित्यिक
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="honour-grid">
+
+
+                <!-- PERSON 1 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award1.jpg"
+                             alt="सन्मानित साहित्यिक"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            साहित्यिकाचे नाव
+                        </h3>
+
+                        <span>
+                            साहित्य सेवा गौरव
+                        </span>
+
+                        <p>
+                            साहित्यिक कार्यासाठी सन्मानित.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PERSON 2 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award2.jpg"
+                             alt="सन्मानित कवी"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            कवीचे नाव
+                        </h3>
+
+                        <span>
+                            काव्य गौरव
+                        </span>
+
+                        <p>
+                            काव्य क्षेत्रातील योगदानासाठी
+                            सन्मानित.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PERSON 3 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award3.jpg"
+                             alt="सन्मानित साहित्यिक"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            साहित्यिकाचे नाव
+                        </h3>
+
+                        <span>
+                            विशेष सन्मान
+                        </span>
+
+                        <p>
+                            साहित्य आणि संस्कृतीतील
+                            योगदानासाठी गौरव.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PERSON 4 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award4.jpg"
+                             alt="सन्मानित व्यक्ती"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            मान्यवराचे नाव
+                        </h3>
+
+                        <span>
+                            साहित्य योगदान
+                        </span>
+
+                        <p>
+                            साहित्यसेवेतील उल्लेखनीय
+                            कार्यासाठी सन्मानित.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PERSON 5 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award5.jpg"
+                             alt="सन्मानित साहित्यिक"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            साहित्यिकाचे नाव
+                        </h3>
+
+                        <span>
+                            संस्कृती सेवा सन्मान
+                        </span>
+
+                        <p>
+                            मराठी संस्कृतीच्या सेवेसाठी
+                            गौरव.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PERSON 6 -->
+
+                <article class="honour-card">
+
+                    <div class="honour-photo">
+
+                        <img src="images/award6.jpg"
+                             alt="सन्मानित कवी"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="honour-info">
+
+                        <h3>
+                            कवीचे नाव
+                        </h3>
+
+                        <span>
+                            विशेष साहित्यिक गौरव
+                        </span>
+
+                        <p>
+                            साहित्य क्षेत्रातील योगदानासाठी
+                            सन्मानित.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         MESSAGE
+         ============================== -->
+
+    <section class="section award-message">
+
+        <div class="container">
+
+            <div class="award-message-inner">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <h2>
+                    सन्मान म्हणजे केवळ पुरस्कार नव्हे,
+                    तर पुढील कार्याची प्रेरणा.
+                </h2>
+
+                <p>
+                    साहित्यिकांच्या कार्याचा गौरव करून
+                    त्यांना अधिक चांगले साहित्य निर्माण
+                    करण्यासाठी प्रेरणा देणे आणि नव्या
+                    पिढीला साहित्याच्या क्षेत्रात येण्यासाठी
+                    प्रोत्साहित करणे, हा आमचा प्रयत्न आहे.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CTA
+         ============================== -->
+
+    <section class="section award-cta">
+
+        <div class="container">
+
+            <h2>
+                साहित्यिक कार्याचा गौरव करूया
+            </h2>
+
+            <p>
+                पुरस्कार, सन्मान किंवा साहित्यिक कार्यक्रमांबाबत
+                अधिक माहितीसाठी आमच्याशी संपर्क साधा.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                संपर्क साधा
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         FOOTER
+         ============================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो"
+                     class="footer-logo">
+
+                <h3>
+                    साहित्य सेवा संस्था
+                </h3>
+
+                <p>
+                    साहित्य, संस्कृती आणि कवी-साहित्यिकांच्या
+                    सेवेसाठी समर्पित संस्था.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    जलद दुवे
+                </h3>
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    संपर्क
+                </h3>
+
+                <p>
+                    📞 फोन: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    💬 WhatsApp: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    📍 पत्ता: लवकरच उपलब्ध
+                </p>
+
+                <a href="contact.html">
+                    संपर्क पृष्ठ →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    साहित्य सेवा संस्था.
+                    सर्व हक्क राखीव.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
