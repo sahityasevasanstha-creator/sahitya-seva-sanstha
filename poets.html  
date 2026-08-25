@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>कवी / साहित्यिक | साहित्य सेवा संस्था</title>
+
+    <meta name="description"
+          content="साहित्य सेवा संस्थेशी जोडलेले कवी, साहित्यिक आणि लेखक.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* कवी पेजसाठी अतिरिक्त कार्ड Design */
+
+        .poets-section {
+            background: var(--cream);
+        }
+
+        .poets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .poet-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .poet-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow);
+        }
+
+        .poet-photo {
+            height: 310px;
+            background: var(--cream-dark);
+            overflow: hidden;
+        }
+
+        .poet-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .poet-card:hover .poet-photo img {
+            transform: scale(1.05);
+        }
+
+        .poet-info {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .poet-info h3 {
+            color: var(--green);
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .poet-role {
+            display: block;
+            color: var(--maroon);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .poet-info p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .poet-work {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--cream-dark);
+            color: var(--green);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .poet-work span {
+            color: var(--maroon);
+        }
+
+        .poets-message {
+            max-width: 850px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .join-poets {
+            background: var(--green);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .join-poets h2 {
+            color: var(--white);
+            font-size: clamp(30px, 4vw, 45px);
+            margin-bottom: 15px;
+        }
+
+        .join-poets p {
+            color: #e4dac9;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        @media (max-width: 900px) {
+            .poets-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .poets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .poet-photo {
+                height: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो">
+
+                <div class="logo-text">
+
+                    <h1>साहित्य सेवा संस्था</h1>
+
+                    <span>
+                        साहित्याची सेवा • संस्कृतीची जपणूक
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Menu">
+
+                ☰
+
+            </button>
+
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="poets.html" class="active">
+                    कवी / साहित्यिक
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+                <a href="awards.html">
+                    पुरस्कार व सन्मान
+                </a>
+
+                <a href="contact.html">
+                    संपर्क
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span>
+                साहित्य • काव्य • प्रतिभा
+            </span>
+
+            <h2>
+                कवी / साहित्यिक
+            </h2>
+
+            <p>
+                शब्दांना आवाज देणाऱ्या आणि मराठी साहित्य
+                समृद्ध करणाऱ्या साहित्यिकांचा परिचय.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- POETS SECTION -->
+    <section class="section poets-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    साहित्यिक परिचय
+                </span>
+
+                <h2>
+                    आमचे कवी आणि साहित्यिक
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <p class="poets-message">
+
+                साहित्य सेवा संस्था कवी, लेखक आणि साहित्यिकांना
+                एकत्र आणून त्यांच्या साहित्यिक कार्याला
+                प्रोत्साहन देण्यासाठी सदैव प्रयत्नशील आहे.
+
+            </p>
+
+
+            <div class="poets-grid">
+
+
+                <!-- POET 1 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet1.jpg"
+                             alt="कवी फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            कवी • लेखक
+                        </span>
+
+                        <p>
+                            साहित्य आणि काव्य क्षेत्रात
+                            उल्लेखनीय योगदान देणारे
+                            साहित्यिक.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>काव्यलेखन</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POET 2 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet2.jpg"
+                             alt="साहित्यिक फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            साहित्यिक • लेखक
+                        </span>
+
+                        <p>
+                            मराठी साहित्य आणि संस्कृतीच्या
+                            क्षेत्रात कार्यरत असलेले
+                            साहित्यिक.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>लेखन व साहित्यसेवा</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POET 3 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet3.jpg"
+                             alt="कवी फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            कवी • साहित्यप्रेमी
+                        </span>
+
+                        <p>
+                            कविता, साहित्य आणि सांस्कृतिक
+                            उपक्रमांमध्ये सक्रिय सहभाग.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>काव्य वाचन</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POET 4 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet4.jpg"
+                             alt="साहित्यिक फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            कवी • लेखक
+                        </span>
+
+                        <p>
+                            साहित्यिक कार्यक्रम आणि
+                            काव्यसंमेलनांमध्ये योगदान देणारे
+                            साहित्यिक.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>कविता व लेखन</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POET 5 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet5.jpg"
+                             alt="कवी फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            साहित्यिक
+                        </span>
+
+                        <p>
+                            मराठी भाषा आणि साहित्याच्या
+                            प्रसारासाठी कार्यरत साहित्यप्रेमी.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>साहित्यसेवा</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- POET 6 -->
+
+                <article class="poet-card">
+
+                    <div class="poet-photo">
+
+                        <img src="images/poet6.jpg"
+                             alt="कवी फोटो"
+                             onerror="this.style.display='none'">
+
+                    </div>
+
+                    <div class="poet-info">
+
+                        <h3>
+                            कवी / साहित्यिक
+                        </h3>
+
+                        <span class="poet-role">
+                            कवी • साहित्यिक
+                        </span>
+
+                        <p>
+                            नवोदित साहित्यिकांना प्रेरणा देणारे
+                            आणि साहित्यिक उपक्रमात सहभागी
+                            होणारे साहित्यप्रेमी.
+                        </p>
+
+                        <div class="poet-work">
+                            साहित्यिक कार्य:
+                            <span>काव्य वाचन व लेखन</span>
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LITERARY ACTIVITIES -->
+    <section class="section activities">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    साहित्यिक व्यासपीठ
+                </span>
+
+                <h2>
+                    साहित्यिकांसाठी आमचे उपक्रम
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="activity-grid">
+
+                <article class="activity-card">
+
+                    <div class="activity-icon">
+                        🎤
+                    </div>
+
+                    <h3>
+                        काव्यसंमेलन
+                    </h3>
+
+                    <p>
+                        कवींना आपले साहित्य रसिकांसमोर
+                        सादर करण्यासाठी व्यासपीठ.
+                    </p>
+
+                </article>
+
+
+                <article class="activity-card">
+
+                    <div class="activity-icon">
+                        ✍️
+                    </div>
+
+                    <h3>
+                        साहित्य लेखन
+                    </h3>
+
+                    <p>
+                        लेखन आणि साहित्यनिर्मितीला
+                        प्रोत्साहन देणारे उपक्रम.
+                    </p>
+
+                </article>
+
+
+                <article class="activity-card">
+
+                    <div class="activity-icon">
+                        🏆
+                    </div>
+
+                    <h3>
+                        सन्मान
+                    </h3>
+
+                    <p>
+                        उल्लेखनीय साहित्यिक कार्यासाठी
+                        कवी आणि साहित्यिकांचा गौरव.
+                    </p>
+
+                </article>
+
+
+                <article class="activity-card">
+
+                    <div class="activity-icon">
+                        🤝
+                    </div>
+
+                    <h3>
+                        साहित्यिक संवाद
+                    </h3>
+
+                    <p>
+                        कवी, लेखक आणि रसिकांना एकत्र
+                        आणणारे साहित्यिक संवाद.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOIN SECTION -->
+    <section class="section join-poets">
+
+        <div class="container">
+
+            <h2>
+                आपल्या साहित्यिक प्रवासात सहभागी व्हा
+            </h2>
+
+            <p>
+                आपण कवी, लेखक किंवा साहित्यिक असाल आणि
+                साहित्य सेवा संस्थेशी जोडले जाऊ इच्छित
+                असाल तर आमच्याशी संपर्क साधा.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                संपर्क साधा
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो"
+                     class="footer-logo">
+
+                <h3>
+                    साहित्य सेवा संस्था
+                </h3>
+
+                <p>
+                    साहित्य, संस्कृती आणि कवी-साहित्यिकांच्या
+                    सेवेसाठी समर्पित संस्था.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    जलद दुवे
+                </h3>
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    संपर्क
+                </h3>
+
+                <p>
+                    📞 फोन: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    💬 WhatsApp: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    📍 पत्ता: लवकरच उपलब्ध
+                </p>
+
+                <a href="contact.html">
+                    संपर्क पृष्ठ →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    साहित्य सेवा संस्था.
+                    सर्व हक्क राखीव.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
