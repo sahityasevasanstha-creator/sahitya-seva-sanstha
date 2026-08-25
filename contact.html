@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>संपर्क | साहित्य सेवा संस्था</title>
+
+    <meta name="description"
+          content="साहित्य सेवा संस्थेशी संपर्क साधण्यासाठी फोन, WhatsApp, पत्ता आणि संपर्क फॉर्म.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ==============================
+           CONTACT PAGE
+           ============================== */
+
+        .contact-section {
+            background: var(--cream);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background: var(--green);
+            color: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h2 {
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .contact-info > p {
+            color: #e5ddd0;
+            line-height: 1.7;
+            margin-bottom: 28px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--dark-green);
+            display: grid;
+            place-items: center;
+            font-size: 21px;
+        }
+
+        .contact-item h3 {
+            color: var(--gold);
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p,
+        .contact-item a {
+            color: #f0e8db;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .contact-item a:hover {
+            color: var(--gold);
+        }
+
+        .contact-form-box {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .contact-form-box h2 {
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .contact-form-box > p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--green);
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid #d8ccb9;
+            border-radius: 6px;
+            background: #fffdf9;
+            color: var(--dark-green);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: 0.25s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(191, 150, 55, 0.12);
+        }
+
+        .form-group textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            background: #e7f3e8;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Map */
+
+        .map-section {
+            background: var(--white);
+        }
+
+        .map-box {
+            width: 100%;
+            min-height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--cream-dark);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 400px;
+            border: 0;
+        }
+
+        .map-placeholder {
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            color: var(--muted);
+        }
+
+        .map-placeholder div {
+            font-size: 55px;
+            margin-bottom: 12px;
+        }
+
+        /* WhatsApp */
+
+        .whatsapp-section {
+            background: var(--cream);
+        }
+
+        .whatsapp-box {
+            max-width: 800px;
+            margin: auto;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+            border-top: 4px solid var(--gold);
+        }
+
+        .whatsapp-icon {
+            font-size: 50px;
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-box h2 {
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .whatsapp-box p {
+            color: var(--muted);
+            max-width: 650px;
+            margin: 0 auto 22px;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            background: var(--green);
+            color: var(--white);
+            padding: 13px 25px;
+            border-radius: 5px;
+            font-weight: 700;
+        }
+
+        .whatsapp-btn:hover {
+            background: var(--maroon);
+            color: var(--white);
+        }
+
+        @media (max-width: 850px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .contact-info,
+            .contact-form-box {
+                padding: 25px 20px;
+            }
+
+            .map-box iframe {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- ==============================
+         HEADER
+         ============================== -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो">
+
+                <div class="logo-text">
+
+                    <h1>साहित्य सेवा संस्था</h1>
+
+                    <span>
+                        साहित्याची सेवा • संस्कृतीची जपणूक
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Menu">
+
+                ☰
+
+            </button>
+
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="poets.html">
+                    कवी / साहित्यिक
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+                <a href="awards.html">
+                    पुरस्कार व सन्मान
+                </a>
+
+                <a href="contact.html" class="active">
+                    संपर्क
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==============================
+         PAGE HERO
+         ============================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span>
+                संवाद • सहकार्य • साहित्यसेवा
+            </span>
+
+            <h2>
+                संपर्क
+            </h2>
+
+            <p>
+                साहित्य सेवा संस्थेशी जोडण्यासाठी
+                आमच्याशी संपर्क साधा.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CONTACT INFORMATION + FORM
+         ============================== -->
+
+    <section class="section contact-section">
+
+        <div class="container">
+
+            <div class="contact-grid">
+
+
+                <!-- CONTACT INFO -->
+
+                <div class="contact-info">
+
+                    <h2>
+                        आमच्याशी संपर्क साधा
+                    </h2>
+
+                    <p>
+                        कार्यक्रम, साहित्यिक उपक्रम,
+                        पुरस्कार, नोंदणी किंवा इतर
+                        माहितीसाठी आमच्याशी संपर्क करा.
+                    </p>
+
+
+                    <!-- COORDINATOR -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                मुख्य संयोजक
+                            </h3>
+
+                            <p>
+                                नाव लवकरच उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PHONE -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📞
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                फोन
+                            </h3>
+
+                            <p>
+                                <a href="tel:+919999999999">
+                                    +91 99999 99999
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- WHATSAPP -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            💬
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <p>
+                                <a href="https://wa.me/919999999999"
+                                   target="_blank"
+                                   rel="noopener">
+                                    WhatsApp वर संपर्क करा
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ADDRESS -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            📍
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                पत्ता
+                            </h3>
+
+                            <p>
+                                साहित्य सेवा संस्था<br>
+                                पत्ता लवकरच उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- EMAIL -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            ✉️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                ई-मेल
+                            </h3>
+
+                            <p>
+                                <a href="mailto:info@sahityasevasanstha.org">
+                                    info@sahityasevasanstha.org
+                                </a>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONTACT FORM -->
+
+                <div class="contact-form-box">
+
+                    <h2>
+                        आम्हाला संदेश पाठवा
+                    </h2>
+
+                    <p>
+                        खालील फॉर्म भरून आपला संदेश
+                        आम्हाला पाठवा.
+                    </p>
+
+
+                    <form id="contactForm">
+
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    पूर्ण नाव *
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="आपले नाव"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    मोबाईल नंबर *
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="मोबाईल नंबर"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                ई-मेल
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="आपला ई-मेल">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                विषय
+                            </label>
+
+                            <select id="subject"
+                                    name="subject">
+
+                                <option value="">
+                                    विषय निवडा
+                                </option>
+
+                                <option value="event">
+                                    कार्यक्रमाबाबत माहिती
+                                </option>
+
+                                <option value="registration">
+                                    कार्यक्रम नोंदणी
+                                </option>
+
+                                <option value="poet">
+                                    कवी / साहित्यिक
+                                </option>
+
+                                <option value="award">
+                                    पुरस्कार / सन्मान
+                                </option>
+
+                                <option value="other">
+                                    इतर
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                आपला संदेश *
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="आपला संदेश येथे लिहा..."
+                                required></textarea>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            class="btn btn-primary submit-btn">
+
+                            संदेश पाठवा
+
+                        </button>
+
+
+                        <div class="form-message"
+                             id="formMessage">
+
+                            धन्यवाद! आपला संदेश नोंदवला गेला आहे.
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         GOOGLE MAP
+         ============================== -->
+
+    <section class="section map-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    आमचे स्थान
+                </span>
+
+                <h2>
+                    Google Map
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="map-box">
+
+                <div class="map-placeholder">
+
+                    <div>
+
+                        📍
+
+                        <h3>
+                            Google Map येथे जोडता येईल
+                        </h3>
+
+                        <p>
+                            संस्थेचा अचूक पत्ता मिळाल्यानंतर
+                            येथे Google Maps जोडू.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         WHATSAPP
+         ============================== -->
+
+    <section class="section whatsapp-section">
+
+        <div class="container">
+
+            <div class="whatsapp-box">
+
+                <div class="whatsapp-icon">
+                    💬
+                </div>
+
+                <h2>
+                    WhatsApp वर संपर्क करा
+                </h2>
+
+                <p>
+                    कार्यक्रमाची माहिती, नोंदणी किंवा
+                    साहित्यिक उपक्रमांबाबत त्वरित
+                    संपर्कासाठी WhatsApp वापरा.
+                </p>
+
+                <a href="https://wa.me/919999999999"
+                   target="_blank"
+                   rel="noopener"
+                   class="whatsapp-btn">
+
+                    WhatsApp वर संदेश पाठवा
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         FOOTER
+         ============================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो"
+                     class="footer-logo">
+
+                <h3>
+                    साहित्य सेवा संस्था
+                </h3>
+
+                <p>
+                    साहित्य, संस्कृती आणि कवी-साहित्यिकांच्या
+                    सेवेसाठी समर्पित संस्था.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    जलद दुवे
+                </h3>
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="gallery.html">
+                    गॅलरी
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    संपर्क
+                </h3>
+
+                <p>
+                    📞 फोन: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    💬 WhatsApp: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    📍 पत्ता: लवकरच उपलब्ध
+                </p>
+
+                <a href="contact.html">
+                    संपर्क पृष्ठ →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    साहित्य सेवा संस्था.
+                    सर्व हक्क राखीव.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+         ============================== -->
+
+    <script src="script.js"></script>
+
+    <script>
+
+        const contactForm =
+            document.getElementById("contactForm");
+
+        const formMessage =
+            document.getElementById("formMessage");
+
+
+        if (contactForm) {
+
+            contactForm.addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                formMessage.style.display = "block";
+
+                contactForm.reset();
+
+            });
+
+        }
+
+    </script>
+
+</body>
+</html>
