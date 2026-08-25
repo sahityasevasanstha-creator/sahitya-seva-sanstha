@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>साहित्य सेवा संस्था | Sahitya Seva Sanstha</title>
+
+  <meta name="description"
+        content="साहित्य सेवा संस्था - कविता, साहित्य, कवी संमेलन आणि सांस्कृतिक उपक्रम">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      background: #fff9e8;
+      color: #202020;
+      line-height: 1.7;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #063b19;
+      box-shadow: 0 3px 15px rgba(0,0,0,.2);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 20px;
+    }
+
+    .logo-text {
+      color: #ffd52e;
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .menu {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .menu a:hover {
+      color: #ffd52e;
+    }
+
+    .menu-btn {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      background:
+        linear-gradient(rgba(0,45,18,.78), rgba(0,45,18,.78)),
+        url("poster.jpg") center/cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .small-title {
+      color: #ffd52e;
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 85px);
+      line-height: 1.2;
+      color: #ffd52e;
+      text-shadow: 3px 3px 5px #000;
+    }
+
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 50px);
+      margin: 5px 0 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #ffd52e;
+      color: #4d160e;
+      padding: 13px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 800;
+      margin: 6px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #ffd52e;
+      color: white;
+    }
+
+    /* GENERAL */
+    section {
+      padding: 75px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #063b19;
+      font-size: 38px;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .section-line {
+      width: 80px;
+      height: 5px;
+      background: #e7a900;
+      margin: 0 auto 45px;
+      border-radius: 10px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fffdf4;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-box {
+      background: white;
+      padding: 35px;
+      border-radius: 20px;
+      box-shadow: 0 5px 25px rgba(0,0,0,.08);
+    }
+
+    .about-box h3 {
+      color: #7a180f;
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    /* EVENT */
+    .event {
+      background: linear-gradient(135deg, #063b19, #0b5525);
+      color: white;
+    }
+
+    .event .section-title {
+      color: #ffd52e;
+    }
+
+    .event-card {
+      max-width: 850px;
+      margin: auto;
+      background: #fffdf4;
+      color: #222;
+      padding: 40px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 35px rgba(0,0,0,.3);
+    }
+
+    .event-card h3 {
+      color: #7a180f;
+      font-size: 34px;
+      margin-bottom: 20px;
+    }
+
+    .event-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 30px 0;
+    }
+
+    .info {
+      background: #f8edc9;
+      padding: 18px;
+      border-radius: 15px;
+    }
+
+    .info strong {
+      display: block;
+      color: #063b19;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    /* ACTIVITIES */
+    .activities {
+      background: #fff9e8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      border-bottom: 5px solid #e7b51d;
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: #063b19;
+      margin-bottom: 8px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      background: #f5edcf;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
+      transition: .3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: #fffdf4;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-box {
+      padding: 30px;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .contact-item {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .contact-item strong {
+      color: #7a180f;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #4c120d;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    footer strong {
+      color: #ffd52e;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(0,0,0,.3);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .menu {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        width: 100%;
+        background: #063b19;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+      }
+
+      .menu.active {
+        display: flex;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .event-info {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+
+    <div class="logo-text">
+      साहित्य सेवा संस्था
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul class="menu" id="menu">
+      <li><a href="#home">मुखपृष्ठ</a></li>
+      <li><a href="#about">आमच्याविषयी</a></li>
+      <li><a href="#event">कार्यक्रम</a></li>
+      <li><a href="#activities">उपक्रम</a></li>
+      <li><a href="#gallery">गॅलरी</a></li>
+      <li><a href="#contact">संपर्क</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <div class="small-title">
+      साहित्य सेवा संस्था आयोजित
+    </div>
+
+    <h1>४थे ऋतू</h1>
+
+    <h2>मनातला आणि मनातला<br>काव्यसंमेलन</h2>
+
+    <p>
+      कवितांचा सुगंध, शब्दांचा आनंद!
+    </p>
+
+    <a href="#event" class="btn">
+      कार्यक्रमाची माहिती
+    </a>
+
+    <a href="#contact" class="btn btn-outline">
+      संपर्क करा
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div class="container">
+
+    <h2 class="section-title">आमच्याविषयी</h2>
+    <div class="section-line"></div>
+
+    <div class="about-grid">
+
+      <div class="about-box">
+
+        <h3>साहित्य सेवा संस्था</h3>
+
+        <p>
+          साहित्य सेवा संस्था ही साहित्य, कविता आणि
+          सांस्कृतिक क्षेत्राला प्रोत्साहन देण्यासाठी कार्यरत
+          असलेली संस्था आहे.
+        </p>
+
+        <p>
+          नवोदित तसेच ज्येष्ठ साहित्यिक, कवी आणि
+          रसिकांना एकत्र आणून साहित्यिक वातावरण निर्माण
+          करणे हा संस्थेचा प्रमुख उद्देश आहे.
+        </p>
+
+      </div>
+
+      <div class="about-box">
+
+        <h3>आमचे ध्येय</h3>
+
+        <p>
+          मराठी भाषा, साहित्य आणि संस्कृतीचा प्रसार करणे,
+          नवोदित कवींना व्यासपीठ उपलब्ध करून देणे आणि
+          साहित्यप्रेमींमध्ये वाचन व लेखनाची आवड निर्माण
+          करणे.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EVENT -->
+<section class="event" id="event">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      आगामी कार्यक्रम
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="event-card">
+
+      <h3>
+        ४थे ऋतू मनातला आणि मनातला काव्यसंमेलन
+      </h3>
+
+      <p>
+        साहित्य सेवा संस्था आयोजित
+      </p>
+
+      <div class="event-info">
+
+        <div class="info">
+          <strong>📅 दिनांक</strong>
+          २३ ऑगस्ट २०२६
+        </div>
+
+        <div class="info">
+          <strong>⏰ वेळ</strong>
+          संध्याकाळी ४ वाजता
+        </div>
+
+        <div class="info">
+          <strong>📍 ठिकाण</strong>
+          डॉ. आंबेडकर स्मारक,<br>
+          सोनवली, बदलापूर (प.), जि. ठाणे
+        </div>
+
+      </div>
+
+      <p>
+        <strong>कवितांचा सुगंध, शब्दांचा आनंद!</strong>
+      </p>
+
+      <br>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Dr.+Babasaheb+Ambedkar+Smark+Sonawali+Badlapur"
+        target="_blank"
+        class="btn">
+        📍 Google Maps वर पहा
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ACTIVITIES -->
+<section class="activities" id="activities">
+
+  <div class="container">
+
+    <h2 class="section-title">आमचे उपक्रम</h2>
+    <div class="section-line"></div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">📖</div>
+        <h3>कवी संमेलन</h3>
+        <p>
+          कवी आणि साहित्यिकांसाठी साहित्यिक व्यासपीठ.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>कविता वाचन</h3>
+        <p>
+          कवितेच्या माध्यमातून भावना आणि विचारांची अभिव्यक्ती.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🏆</div>
+        <h3>सन्मान व पुरस्कार</h3>
+        <p>
+          साहित्य क्षेत्रातील उल्लेखनीय कार्याचा गौरव.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎭</div>
+        <h3>सांस्कृतिक कार्यक्रम</h3>
+        <p>
+          साहित्य आणि संस्कृतीशी संबंधित विविध कार्यक्रम.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🌱</div>
+        <h3>नवोदितांना व्यासपीठ</h3>
+        <p>
+          नवोदित कवी आणि लेखकांना प्रोत्साहन.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🤝</div>
+        <h3>साहित्यिक संवाद</h3>
+        <p>
+          साहित्यप्रेमी आणि साहित्यिकांना जोडणारे उपक्रम.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+
+  <div class="container">
+
+    <h2 class="section-title">कार्यक्रम गॅलरी</h2>
+    <div class="section-line"></div>
+
+    <div class="gallery-grid">
+
+      <img src="poster.jpg" alt="काव्यसंमेलन पोस्टर">
+
+      <img src="poster.jpg" alt="साहित्य सेवा संस्था">
+
+      <img src="poster.jpg" alt="काव्यसंमेलन">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <h2 class="section-title">संपर्क</h2>
+    <div class="section-line"></div>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <h3>साहित्य सेवा संस्था</h3>
+
+        <br>
+
+        <div class="contact-item">
+          <strong>📍 पत्ता:</strong><br>
+          डॉ. आंबेडकर स्मारक, सोनवली,<br>
+          बदलापूर (प.), जि. ठाणे
+        </div>
+
+        <div class="contact-item">
+          <strong>📞 सहभागी होण्यासाठी संपर्क:</strong><br>
+          <a href="tel:9860133950">
+            9860133950
+          </a>
+        </div>
+
+      </div>
+
+
+      <div class="contact-box">
+
+        <h3>मुख्य संयोजक</h3>
+
+        <br>
+
+        <p>
+          <strong>बी. अनिल तथा अनिल भालेराव</strong>
+        </p>
+
+        <br>
+
+        <a
+          href="https://wa.me/919860133950?text=नमस्कार,%20साहित्य%20सेवा%20संस्थेच्या%20कार्यक्रमाबद्दल%20माहिती%20हवी%20आहे."
+          target="_blank"
+          class="btn">
+          WhatsApp वर संपर्क करा
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <p>
+    © 2026 <strong>साहित्य सेवा संस्था</strong>
+  </p>
+
+  <p>
+    कवितांचा सुगंध, शब्दांचा आनंद!
+  </p>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+<a
+  class="whatsapp"
+  href="https://wa.me/919860133950"
+  target="_blank"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+
+  document.querySelectorAll(".menu a").forEach(function(link) {
+    link.addEventListener("click", function() {
+      document.getElementById("menu").classList.remove("active");
+    });
+  });
+</script>
+
+</body>
+</html>
