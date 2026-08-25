@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>गॅलरी | साहित्य सेवा संस्था</title>
+
+    <meta name="description"
+          content="साहित्य सेवा संस्थेच्या काव्यसंमेलन, साहित्यिक कार्यक्रम आणि पुरस्कार सोहळ्यांची फोटो गॅलरी.">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================
+           GALLERY PAGE
+           ===================================== */
+
+        .gallery-section {
+            background: var(--cream);
+        }
+
+        .gallery-intro {
+            max-width: 800px;
+            margin: 0 auto 45px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 17px;
+        }
+
+        .gallery-category {
+            margin-bottom: 70px;
+        }
+
+        .gallery-category-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .gallery-category-title span {
+            font-size: 30px;
+        }
+
+        .gallery-category-title h3 {
+            color: var(--green);
+            font-size: 28px;
+        }
+
+        .gallery-category-title::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: var(--gold);
+            margin-left: 10px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-card {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 9px;
+            background: var(--cream-dark);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 25px 18px 18px;
+
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.85)
+            );
+
+            color: var(--white);
+        }
+
+        .gallery-overlay h4 {
+            font-size: 20px;
+            margin-bottom: 3px;
+        }
+
+        .gallery-overlay p {
+            color: #eee5d5;
+            font-size: 13px;
+        }
+
+        .gallery-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 25px;
+            color: var(--muted);
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--cream-dark),
+                    var(--cream)
+                );
+        }
+
+        .gallery-placeholder div {
+            font-size: 45px;
+            margin-bottom: 8px;
+        }
+
+        /* Video section */
+
+        .video-section {
+            background: var(--white);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .video-card {
+            background: var(--cream);
+            border-radius: 9px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+        }
+
+        .video-box {
+            height: 280px;
+            background: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .video-play {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--dark-green);
+            display: grid;
+            place-items: center;
+            font-size: 30px;
+            margin: 0 auto 12px;
+        }
+
+        .video-box p {
+            color: var(--gold-light);
+            font-weight: 700;
+        }
+
+        .video-info {
+            padding: 20px;
+        }
+
+        .video-info h3 {
+            color: var(--green);
+            margin-bottom: 5px;
+        }
+
+        .video-info p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .gallery-cta {
+            background: var(--maroon);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .gallery-cta h2 {
+            font-size: clamp(30px, 4vw, 45px);
+            margin-bottom: 12px;
+        }
+
+        .gallery-cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #e7ddce;
+        }
+
+        @media (max-width: 800px) {
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-card {
+                height: 260px;
+            }
+
+            .gallery-category-title {
+                align-items: flex-start;
+            }
+
+            .gallery-category-title::after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <a href="index.html" class="logo">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो">
+
+                <div class="logo-text">
+
+                    <h1>साहित्य सेवा संस्था</h1>
+
+                    <span>
+                        साहित्याची सेवा • संस्कृतीची जपणूक
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <button class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Menu">
+
+                ☰
+
+            </button>
+
+
+            <nav class="main-nav" id="mainNav">
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="poets.html">
+                    कवी / साहित्यिक
+                </a>
+
+                <a href="gallery.html" class="active">
+                    गॅलरी
+                </a>
+
+                <a href="awards.html">
+                    पुरस्कार व सन्मान
+                </a>
+
+                <a href="contact.html">
+                    संपर्क
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE HERO -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span>
+                आठवणी • क्षण • साहित्य
+            </span>
+
+            <h2>
+                फोटो गॅलरी
+            </h2>
+
+            <p>
+                साहित्य सेवा संस्थेच्या विविध कार्यक्रमांच्या
+                आणि साहित्यिक उपक्रमांच्या आठवणी.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+
+    <section class="section gallery-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    आठवणींचा ठेवा
+                </span>
+
+                <h2>
+                    कार्यक्रम गॅलरी
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <p class="gallery-intro">
+
+                काव्यसंमेलन, साहित्यिक मेळावे, पुरस्कार सोहळे
+                आणि विविध सांस्कृतिक कार्यक्रमांमधील
+                अविस्मरणीय क्षण.
+
+            </p>
+
+
+            <!-- KAVYA SAMMELAN -->
+
+            <div class="gallery-category">
+
+                <div class="gallery-category-title">
+
+                    <span>🎤</span>
+
+                    <h3>
+                        काव्यसंमेलन
+                    </h3>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+
+                    <div class="gallery-card">
+
+                        <img src="images/gallery1.jpg"
+                             alt="काव्यसंमेलन">
+
+                        <div class="gallery-overlay">
+
+                            <h4>
+                                काव्यसंमेलन
+                            </h4>
+
+                            <p>
+                                साहित्यिक आणि कवींचा सहभाग
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <img src="images/gallery2.jpg"
+                             alt="कवी आणि साहित्यिक">
+
+                        <div class="gallery-overlay">
+
+                            <h4>
+                                कवी संमेलन
+                            </h4>
+
+                            <p>
+                                काव्यवाचनाचा अविस्मरणीय क्षण
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <img src="images/gallery3.jpg"
+                             alt="साहित्यिक कार्यक्रम">
+
+                        <div class="gallery-overlay">
+
+                            <h4>
+                                साहित्यिक कार्यक्रम
+                            </h4>
+
+                            <p>
+                                साहित्यप्रेमींचा उत्स्फूर्त सहभाग
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- OTHER PROGRAMS -->
+
+            <div class="gallery-category">
+
+                <div class="gallery-category-title">
+
+                    <span>📚</span>
+
+                    <h3>
+                        साहित्यिक कार्यक्रम
+                    </h3>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                📖
+                            </div>
+
+                            <p>
+                                साहित्यिक कार्यक्रमाचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                ✍️
+                            </div>
+
+                            <p>
+                                साहित्यिक संवादाचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                🎙️
+                            </div>
+
+                            <p>
+                                काव्यवाचन कार्यक्रमाचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- AWARD PROGRAM -->
+
+            <div class="gallery-category">
+
+                <div class="gallery-category-title">
+
+                    <span>🏆</span>
+
+                    <h3>
+                        पुरस्कार व सन्मान सोहळे
+                    </h3>
+
+                </div>
+
+
+                <div class="photo-grid">
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                🏆
+                            </div>
+
+                            <p>
+                                पुरस्कार सोहळ्याचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                🌟
+                            </div>
+
+                            <p>
+                                साहित्यिक सन्मानाचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="gallery-card">
+
+                        <div class="gallery-placeholder">
+
+                            <div>
+                                🎖️
+                            </div>
+
+                            <p>
+                                गौरव सोहळ्याचा फोटो
+                                येथे उपलब्ध होईल
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VIDEO SECTION -->
+
+    <section class="section video-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span>
+                    व्हिडिओ
+                </span>
+
+                <h2>
+                    कार्यक्रमांचे व्हिडिओ
+                </h2>
+
+                <div class="heading-line"></div>
+
+            </div>
+
+
+            <div class="video-grid">
+
+
+                <div class="video-card">
+
+                    <div class="video-box">
+
+                        <div>
+
+                            <div class="video-play">
+                                ▶
+                            </div>
+
+                            <p>
+                                काव्यसंमेलन व्हिडिओ
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="video-info">
+
+                        <h3>
+                            आगामी काव्यसंमेलन
+                        </h3>
+
+                        <p>
+                            कार्यक्रमाचा व्हिडिओ येथे
+                            जोडता येईल.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="video-card">
+
+                    <div class="video-box">
+
+                        <div>
+
+                            <div class="video-play">
+                                ▶
+                            </div>
+
+                            <p>
+                                साहित्यिक कार्यक्रम
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="video-info">
+
+                        <h3>
+                            साहित्यिक कार्यक्रम
+                        </h3>
+
+                        <p>
+                            YouTube किंवा इतर व्हिडिओ
+                            येथे जोडता येतील.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="section gallery-cta">
+
+        <div class="container">
+
+            <h2>
+                आपल्या आठवणी आमच्यासोबत शेअर करा
+            </h2>
+
+            <p>
+                साहित्य सेवा संस्थेच्या कार्यक्रमातील
+                आपले फोटो किंवा व्हिडिओ आमच्यापर्यंत
+                पोहोचवण्यासाठी संपर्क साधा.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                संपर्क साधा
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+
+            <div class="footer-about">
+
+                <img src="images/logo.png"
+                     alt="साहित्य सेवा संस्था लोगो"
+                     class="footer-logo">
+
+                <h3>
+                    साहित्य सेवा संस्था
+                </h3>
+
+                <p>
+                    साहित्य, संस्कृती आणि कवी-साहित्यिकांच्या
+                    सेवेसाठी समर्पित संस्था.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <h3>
+                    जलद दुवे
+                </h3>
+
+                <a href="index.html">
+                    मुख्यपृष्ठ
+                </a>
+
+                <a href="about.html">
+                    आमच्याविषयी
+                </a>
+
+                <a href="events.html">
+                    कार्यक्रम
+                </a>
+
+                <a href="poets.html">
+                    कवी / साहित्यिक
+                </a>
+
+            </div>
+
+
+            <div class="footer-contact">
+
+                <h3>
+                    संपर्क
+                </h3>
+
+                <p>
+                    📞 फोन: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    💬 WhatsApp: लवकरच उपलब्ध
+                </p>
+
+                <p>
+                    📍 पत्ता: लवकरच उपलब्ध
+                </p>
+
+                <a href="contact.html">
+                    संपर्क पृष्ठ →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="container">
+
+                <p>
+                    © <span id="currentYear"></span>
+                    साहित्य सेवा संस्था.
+                    सर्व हक्क राखीव.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
