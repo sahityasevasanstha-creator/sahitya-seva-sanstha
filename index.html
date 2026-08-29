@@ -3,661 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>साहित्य सेवा संस्था | साहित्याची सेवा • संस्कृतीची जपणूक</title>
-
-    <meta name="description"
-          content="साहित्य सेवा संस्था — कवी, साहित्यिक आणि साहित्यप्रेमींना जोडणारे व्यासपीठ.">
-
+    <title>साहित्य सेवा संस्था, बदलापूर</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yatin:wght@400;700&family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <header class="site-header">
-
-        <div class="container header-inner">
-
-            <a href="index.html" class="logo">
-
-                <img src="images/logo.png"
-                     alt="साहित्य सेवा संस्था लोगो">
-
-                <div class="logo-text">
-
-                    <h1>साहित्य सेवा संस्था</h1>
-
-                    <span>
-                        साहित्याची सेवा • संस्कृतीची जपणूक
-                    </span>
-
-                </div>
-
-            </a>
-
-
-            <button class="menu-toggle"
-                    id="menuToggle"
-                    aria-label="Menu"
-                    aria-expanded="false">
-
-                ☰
-
-            </button>
-
-
-            <nav class="main-nav" id="mainNav">
-
-                <a href="index.html" class="active">
-                    मुख्यपृष्ठ
-                </a>
-
-                <a href="about.html">
-                    आमच्याविषयी
-                </a>
-
-                <a href="events.html">
-                    कार्यक्रम
-                </a>
-
-                <a href="poets.html">
-                    कवी / साहित्यिक
-                </a>
-
-                <a href="gallery.html">
-                    गॅलरी
-                </a>
-
-                <a href="awards.html">
-                    पुरस्कार व सन्मान
-                </a>
-
-                <a href="contact.html">
-                    संपर्क
-                </a>
-
-            </nav>
-
+    <!-- नेव्हिगेशन बार -->
+    <header class="navbar">
+        <div class="logo-container">
+            <div class="logo-text">
+                <h1>साहित्य सेवा संस्था</h1>
+                <p>साहित्याची सेवा • संस्कृतीची जपणूक</p>
+            </div>
         </div>
-
+        <nav>
+            <ul>
+                <li><a href="#" class="active">मुख्यपृष्ठ</a></li>
+                <li><a href="#">कार्यक्रम</a></li>
+                <li><a href="#">कार्यकारिणी</a></li>
+                <li><a href="#">संपर्क</a></li>
+            </ul>
+        </nav>
     </header>
 
-
-    <!-- HERO SECTION -->
+    <!-- मुख्य हिरो सेक्शन (बॅनर डिझाईननुसार) -->
     <section class="hero">
-
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-
-            <div class="hero-text">
-
-                <span class="hero-tag">
-                    साहित्य • काव्य • संस्कृती
-                </span>
-
-                <h2>
-                    साहित्याची सेवा,<br>
-                    <span>संस्कृतीची जपणूक</span>
-                </h2>
-
-                <p>
-                    कवी, साहित्यिक आणि साहित्यप्रेमींना
-                    एकत्र आणणारे आपले हक्काचे साहित्यिक
-                    व्यासपीठ.
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a href="events.html"
-                       class="btn btn-primary">
-                        आगामी कार्यक्रम
-                    </a>
-
-                    <a href="about.html"
-                       class="btn btn-outline">
-                        संस्थेविषयी जाणून घ्या
-                    </a>
-
-                </div>
-
+            
+            <div class="sub-header">
+                <h2>साहित्य सेवा संस्था, बदलापूर आयोजित</h2>
+                <h3>डॉ बाबासाहेब आंबेडकर स्मारक समिती यांच्या सहकार्याने</h3>
             </div>
 
+            <div class="title-box">
+                <h1 class="main-title">ऋतू रानातला <span class="and">आणि</span> मनातला</h1>
+                <p class="subtitle">काव्य संमेलन, बदलापूर</p>
+            </div>
 
-            <div class="hero-card">
+            <!-- दिनांक बॅज -->
+            <div class="date-badge">
+                <span>रविवार, दिनांक : २३ ऑगस्ट २०२६</span>
+            </div>
 
-                <div class="hero-card-top">
-                    आगामी काव्यसंमेलन
+            <!-- मुख्य अतिथी आणि अध्यक्ष कार्ड -->
+            <div class="card-row grid-2">
+                <div class="glass-card">
+                    <h3 class="highlight-red">बी. अनिल तथा अनिल भालेराव</h3>
+                    <p class="role">( मुख्य संयोजक )</p>
                 </div>
-
-                <div class="hero-card-icon">
-                    🎤
+                <div class="glass-card">
+                    <h3 class="highlight-red">नाटककार श्याम रंजनकर</h3>
+                    <p class="role">( संमेलनाध्यक्ष )</p>
                 </div>
+            </div>
 
-                <h3>
-                    ४थे ऋतू मनातला
-                </h3>
+            <!-- प्रमुख अतिथी -->
+            <div class="section-badge">प्रमुख अतिथी</div>
+            <div class="glass-card single-card">
+                <h3 class="highlight-red">सौ. रेश्मा धनंजय सुर्वे</h3>
+                <p class="role">( नगरसेविका, अंबरनाथ नगरपरिषद )</p>
+            </div>
 
-                <h4>
-                    आणि मनातला काव्यसंमेलन
-                </h4>
-
-                <div class="event-details">
-
-                    <p>
-                        📅 <strong>दिनांक:</strong>
-                        लवकरच जाहीर
-                    </p>
-
-                    <p>
-                        🕐 <strong>वेळ:</strong>
-                        लवकरच जाहीर
-                    </p>
-
-                    <p>
-                        📍 <strong>ठिकाण:</strong>
-                        लवकरच जाहीर
-                    </p>
-
+            <!-- कार्यकारिणी -->
+            <div class="section-badge yellow-badge">कार्यकारिणी</div>
+            <div class="glass-card grid-4">
+                <div class="member">
+                    <h4>सुनील दुपटे</h4>
+                    <p>( कार्याध्यक्ष )</p>
                 </div>
+                <div class="member">
+                    <h4>शामराव सोमकुवर</h4>
+                    <p>( सरचिटणीस )</p>
+                </div>
+                <div class="member">
+                    <h4>रमेश कांबळे</h4>
+                    <p>( कोषाध्यक्ष )</p>
+                </div>
+                <div class="member">
+                    <h4>रामदास सकट</h4>
+                    <p>( निमंत्रक )</p>
+                </div>
+            </div>
 
-                <a href="events.html"
-                   class="card-link">
-                    कार्यक्रमाची माहिती →
-                </a>
-
+            <!-- पावसाळी कोट / टॅगलाईन -->
+            <div class="quote-circle">
+                <p>"पावसाची रिमझिम आणि कवितेची सरमिसळ...<br>अनुभवूया सृष्टीच्या संगीतात शब्दांचा सोहळा..."</p>
             </div>
 
         </div>
-
     </section>
-
-
-    <!-- ABOUT SHORT SECTION -->
-    <section class="section">
-
-        <div class="container two-column">
-
-            <div>
-
-                <span class="section-tag">
-                    साहित्य सेवा संस्था
-                </span>
-
-                <h2>
-                    शब्दांपासून समाजापर्यंत
-                </h2>
-
-                <p>
-                    साहित्य सेवा संस्था ही कवी, लेखक,
-                    साहित्यिक आणि साहित्यप्रेमींना
-                    एकत्र आणणारी साहित्यिक संस्था आहे.
-                </p>
-
-                <p>
-                    मराठी भाषा आणि साहित्याची जपणूक,
-                    नवोदित साहित्यिकांना प्रोत्साहन आणि
-                    विविध साहित्यिक व सांस्कृतिक
-                    उपक्रमांचे आयोजन हे आमच्या कार्याचे
-                    प्रमुख उद्दिष्ट आहे.
-                </p>
-
-                <a href="about.html"
-                   class="text-link">
-                    आमच्याविषयी अधिक वाचा →
-                </a>
-
-            </div>
-
-
-            <div class="about-box">
-
-                <div class="quote-mark">
-                    “
-                </div>
-
-                <p>
-                    साहित्य हे केवळ शब्द नसतात;
-                    ते विचार, भावना आणि संस्कृतीचा
-                    जिवंत वारसा असतात.
-                </p>
-
-                <span>
-                    साहित्य सेवा संस्था
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ACTIVITIES -->
-    <section class="section activities">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span>
-                    आमचे उपक्रम
-                </span>
-
-                <h2>
-                    साहित्य आणि संस्कृतीसाठी कार्य
-                </h2>
-
-                <div class="heading-line"></div>
-
-            </div>
-
-
-            <div class="activity-grid">
-
-
-                <article class="activity-card">
-
-                    <div class="activity-icon">
-                        🎤
-                    </div>
-
-                    <h3>
-                        काव्यसंमेलन
-                    </h3>
-
-                    <p>
-                        कवी आणि साहित्यिकांना आपले
-                        साहित्य रसिकांसमोर सादर करण्यासाठी
-                        व्यासपीठ.
-                    </p>
-
-                    <a href="events.html">
-                        अधिक माहिती →
-                    </a>
-
-                </article>
-
-
-                <article class="activity-card">
-
-                    <div class="activity-icon">
-                        ✍️
-                    </div>
-
-                    <h3>
-                        साहित्यिक उपक्रम
-                    </h3>
-
-                    <p>
-                        लेखन, काव्यवाचन, साहित्यिक संवाद
-                        आणि विविध सांस्कृतिक कार्यक्रम.
-                    </p>
-
-                    <a href="about.html">
-                        आमचे कार्य →
-                    </a>
-
-                </article>
-
-
-                <article class="activity-card">
-
-                    <div class="activity-icon">
-                        🏆
-                    </div>
-
-                    <h3>
-                        पुरस्कार व सन्मान
-                    </h3>
-
-                    <p>
-                        साहित्य आणि संस्कृतीच्या क्षेत्रात
-                        उल्लेखनीय कार्य करणाऱ्या व्यक्तींचा
-                        गौरव.
-                    </p>
-
-                    <a href="awards.html">
-                        पुरस्कार पहा →
-                    </a>
-
-                </article>
-
-
-                <article class="activity-card">
-
-                    <div class="activity-icon">
-                        🤝
-                    </div>
-
-                    <h3>
-                        साहित्यिकांची एकजूट
-                    </h3>
-
-                    <p>
-                        कवी, लेखक आणि साहित्यप्रेमींना
-                        एका समान व्यासपीठावर जोडण्याचा
-                        प्रयत्न.
-                    </p>
-
-                    <a href="poets.html">
-                        साहित्यिक पहा →
-                    </a>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- UPCOMING EVENT -->
-    <section class="section upcoming-event">
-
-        <div class="container">
-
-            <div class="event-highlight">
-
-                <div class="event-highlight-text">
-
-                    <span class="section-tag">
-                        विशेष कार्यक्रम
-                    </span>
-
-                    <h2>
-                        ४थे ऋतू मनातला
-                    </h2>
-
-                    <h3>
-                        आणि मनातला काव्यसंमेलन
-                    </h3>
-
-                    <p>
-                        काव्य, साहित्य आणि रसिकतेचा सुंदर
-                        मिलाफ अनुभवण्यासाठी साहित्यिक
-                        आणि काव्यप्रेमींनी सहभागी व्हावे.
-                    </p>
-
-                    <a href="events.html"
-                       class="btn btn-primary">
-                        कार्यक्रमाची संपूर्ण माहिती
-                    </a>
-
-                </div>
-
-
-                <div class="event-poster">
-
-                    <img src="images/poster.jpg"
-                         alt="४थे ऋतू मनातला काव्यसंमेलन पोस्टर"
-                         onerror="this.style.display='none'">
-
-                    <div class="poster-fallback">
-
-                        <span>
-                            🎤
-                        </span>
-
-                        <strong>
-                            ४थे ऋतू मनातला
-                        </strong>
-
-                        <small>
-                            आणि मनातला काव्यसंमेलन
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GALLERY PREVIEW -->
-    <section class="section gallery-preview">
-
-        <div class="container">
-
-            <div class="section-heading">
-
-                <span>
-                    आठवणी
-                </span>
-
-                <h2>
-                    कार्यक्रमांची झलक
-                </h2>
-
-                <div class="heading-line"></div>
-
-            </div>
-
-
-            <div class="photo-grid">
-
-
-                <a href="gallery.html"
-                   class="gallery-card">
-
-                    <img src="images/gallery1.jpg"
-                         alt="साहित्यिक कार्यक्रम">
-
-                    <div class="gallery-overlay">
-
-                        <h4>
-                            काव्यसंमेलन
-                        </h4>
-
-                        <p>
-                            कार्यक्रमाची झलक
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="gallery.html"
-                   class="gallery-card">
-
-                    <img src="images/gallery2.jpg"
-                         alt="कवी आणि साहित्यिक">
-
-                    <div class="gallery-overlay">
-
-                        <h4>
-                            साहित्यिक मेळावा
-                        </h4>
-
-                        <p>
-                            साहित्यिकांचा सहभाग
-                        </p>
-
-                    </div>
-
-                </a>
-
-
-                <a href="gallery.html"
-                   class="gallery-card">
-
-                    <img src="images/gallery3.jpg"
-                         alt="साहित्य सेवा संस्था कार्यक्रम">
-
-                    <div class="gallery-overlay">
-
-                        <h4>
-                            साहित्यिक उपक्रम
-                        </h4>
-
-                        <p>
-                            अविस्मरणीय क्षण
-                        </p>
-
-                    </div>
-
-                </a>
-
-            </div>
-
-
-            <div class="center-button">
-
-                <a href="gallery.html"
-                   class="btn btn-secondary">
-                    संपूर्ण गॅलरी पहा
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CONTACT CTA -->
-    <section class="section home-contact">
-
-        <div class="container">
-
-            <div class="cta-box">
-
-                <div>
-
-                    <span>
-                        साहित्याच्या प्रवासात सहभागी व्हा
-                    </span>
-
-                    <h2>
-                        चला, शब्दांना एकत्र आणूया!
-                    </h2>
-
-                    <p>
-                        कार्यक्रम, साहित्यिक उपक्रम,
-                        काव्यसंमेलन किंवा संस्थेशी
-                        जोडण्यासाठी आमच्याशी संपर्क करा.
-                    </p>
-
-                </div>
-
-
-                <a href="contact.html"
-                   class="btn btn-primary">
-                    संपर्क साधा
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-
-        <div class="container footer-grid">
-
-
-            <div class="footer-about">
-
-                <img src="images/logo.png"
-                     alt="साहित्य सेवा संस्था लोगो"
-                     class="footer-logo">
-
-                <h3>
-                    साहित्य सेवा संस्था
-                </h3>
-
-                <p>
-                    साहित्य, संस्कृती आणि कवी-साहित्यिकांच्या
-                    सेवेसाठी समर्पित संस्था.
-                </p>
-
-            </div>
-
-
-            <div class="footer-links">
-
-                <h3>
-                    जलद दुवे
-                </h3>
-
-                <a href="index.html">
-                    मुख्यपृष्ठ
-                </a>
-
-                <a href="about.html">
-                    आमच्याविषयी
-                </a>
-
-                <a href="events.html">
-                    कार्यक्रम
-                </a>
-
-                <a href="poets.html">
-                    कवी / साहित्यिक
-                </a>
-
-                <a href="gallery.html">
-                    गॅलरी
-                </a>
-
-            </div>
-
-
-            <div class="footer-contact">
-
-                <h3>
-                    संपर्क
-                </h3>
-
-                <p>
-                    📞 फोन: लवकरच उपलब्ध
-                </p>
-
-                <p>
-                    💬 WhatsApp: लवकरच उपलब्ध
-                </p>
-
-                <p>
-                    📍 पत्ता: लवकरच उपलब्ध
-                </p>
-
-                <a href="contact.html">
-                    संपर्क पृष्ठ →
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-bottom">
-
-            <div class="container">
-
-                <p>
-                    © <span id="currentYear"></span>
-                    साहित्य सेवा संस्था.
-                    सर्व हक्क राखीव.
-                </p>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
 
 </body>
 </html>
